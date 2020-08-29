@@ -1,0 +1,17 @@
+<div class="card">
+    <form (ngSubmit)="login()">
+        <div class="field">
+            <label class="label">Rest Id: </label>
+            <div class="control">
+                <input class="input" type="text" name="id" placeholder="Enter ID" [(ngModel)]="id">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Password:</label>
+            <div class="control">
+                <input class="input" type="password" name="password" placeholder="Password" [(ngModel)]="password">
+            </div>
+        </div>
+        <button class="button is-primary" type="submit"> Login </button>
+    </form>
+</div>

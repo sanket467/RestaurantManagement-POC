@@ -1,15 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const
-
-
-    multer = require('multer');
+const multer = require('multer');
 const upload = multer();
 
 const app = express();
 
 const foodRoutes = require('./routes/food');
+const tableRoutes = require('./routes/table');
+const restRoutes = require('./routes/rest');
 
 mongoose.connect("mongodb+srv://sanket:p8uUvN5gxYSJ9Dvy@cluster0.urxep.mongodb.net/restaurant?retryWrites=true&w=majority")
     .then(() => {
@@ -46,5 +45,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/foods", foodRoutes);
+app.use("/api/table", tableRoutes);
+app.use("/api/rest", restRoutes);
 
 module.exports = app;

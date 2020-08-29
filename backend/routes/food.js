@@ -47,6 +47,7 @@ router.get("/getFood/:id", (req, res, next) => {
 
 
 router.delete("/delFood/:id", (req, res, next) => {
+    console.log(req.params.id);
     Food.deleteOne({ foodId: req.params.id }).then(result => {
         res.status(200).json({
             message: "Food Deleted !!"

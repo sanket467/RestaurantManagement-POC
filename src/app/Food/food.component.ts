@@ -30,8 +30,11 @@ export class FoodComponent implements OnInit {
   cost:string ;
   id:string ;
 
-  deleteFood(){
-    alert("Delete Called!!!");
+  deleteFood(id: number){
+    this.http.delete("http://localhost:3000/api/foods/delFood/" + id)
+    .subscribe(res => {
+      console.log(res);
+    })
   }
 
   addFood(){
