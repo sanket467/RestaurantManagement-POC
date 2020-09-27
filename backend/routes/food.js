@@ -11,7 +11,8 @@ router.post("/addFood", (req, res, next) => {
     const food = new Food({
         name: req.body.name,
         cost: req.body.cost,
-        foodId: req.body.foodId
+        foodId: req.body.foodId,
+        restId: req.body.restId
     });
 
     food.save().then(result => {
