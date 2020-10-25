@@ -36,7 +36,25 @@ export class RestService {
   }
 
   goToTable(obj: any){
+     this.restObjBuf = obj;
+     this.router.navigate(['/table']);
+  }
+
+  goToMenu(obj: any){
+    console.log("here");
     this.restObjBuf = obj;
-    this.router.navigate(['/table']);
+    this.router.navigate(['/menu']);
+  }
+
+  getMenuInfo(){
+    return this.restObjBuf;
+  }
+
+  modifyTable(id, tctr){
+   console.log("tableid" + id + 'sdads' + tctr);
+   this.http.patch('http://localhost:3000/api/rest/table/' + id, {table: tctr}).subscribe(result => {
+     console.log(result);
+     alert("Number of Tables Updated!!!");
+   });
   }
 }

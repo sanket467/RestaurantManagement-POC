@@ -9,6 +9,7 @@ import { FoodComponent } from './Food/food.component';
 import {LoginComponent} from './Login/login.component';
 import { LandingComponent } from './Landing/landing.component';
 import { TableComponent } from './Table/table.component';
+import { MenuComponent } from './Menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TableComponent } from './Table/table.component';
     FoodComponent,
     LoginComponent,
     LandingComponent,
-    TableComponent
+    TableComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, Injectable, OnInit, OnDestroy } from '@angular/core';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { HttpClient } from "@angular/common/http";
 import { Food } from '../Food/food.model';
+import { RestService } from '../rest.service';
 
 @Component({
   selector: 'food-component',
@@ -13,44 +14,16 @@ import { Food } from '../Food/food.model';
 export class FoodComponent implements OnInit {
 
   foods: Food[] = [];
+  restInfo:any;
 
-  constructor(private http: HttpClient){};
+  constructor(private http: HttpClient, private restService: RestService){};
 
   ngOnInit(){
-    this.http.get("http://localhost:3000/api/foods/getFood")
-    .subscribe((foodData: any) => {
-      this.foods = foodData;
-      console.log(this.foods);
-    }
-    );
-  }
 
+    this.restInfo = this.restService.getMenuInfo();
+    console.log("In food " + this.restInfo.restId);
 
-  name:string ;
-  cost:string ;
-  id:string ;
-
-  deleteFood(id: number){
-    this.http.delete("http://localhost:3000/api/foods/delFood/" + id)
-    .subscribe(res => {
-      console.log(res);
-    })
-  }
-
-  addFood(){
-    console.log(this.name + this.cost + this.id);
-
-    const foodData = new FormData();
-    foodData.append("name", this.name);
-    foodData.append("cost", this.cost);
-    foodData.append("foodId", this.id);
-
-    this.http.post<{message : string}>("http://localhost:3000/api/foods/addFood" , foodData)
-    .subscribe(res => {
-      console.log(res);
-      alert(res.message);
-    });
-    this.http.get("http://localhost:3000/api/foods/getFood")
+    this.http.get("http://localhost:3000/api/foods/getFood/" + this.restInfo.restId)
     .subscribe((foodData: any) => {
       this.foods = foodData;
       console.log(this.foods);

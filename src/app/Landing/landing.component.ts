@@ -60,6 +60,11 @@ export class LandingComponent implements OnInit, OnDestroy{
       this.restService.goToTable(this.restObj);
     }
 
+    loadMenu(){
+      console.log(this.restObj);
+      this.restService.goToMenu(this.restObj);
+    }
+
   ngOnDestroy(){
     this.sub.unsubscribe();
   }

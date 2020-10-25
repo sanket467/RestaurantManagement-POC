@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 
 
 @Component({
-  selector: 'table',
+  selector: 'table-cust',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
@@ -28,6 +28,8 @@ export class TableComponent implements OnInit, OnDestroy{
 
   tableModify(){
     console.log(this.tables);
+    console.log(this.restInfo.restId);
+    this.restService.modifyTable(this.restInfo.restId, this.tables );
   }
     ngOnDestroy(){
 

@@ -1,46 +1,9 @@
-<div class="columns">
-    <div class="column">
-        <form (ngSubmit)="addFood()">
-            <div class="tile is-parent">
-                <article class="tile is-child notification is-info">
-                    <div class="field">
-                        <div class="control">
-                            <input class="input is-primary" type="text" placeholder="Name" name="name" [(ngModel)]="name">
-                        </div>
-
-                        <div class="control">
-                            <input class="input is-primary" type="number" placeholder="Cost in INR" name="cost" [(ngModel)]="cost">
-                        </div>
-
-                        <div class="control">
-                            <input class="input is-primary" type="text" placeholder="ID" name="id" [(ngModel)]="id">
-                        </div>
-                    </div>
-                    <button type="submit" class="button is-light">Add Food</button>
-                </article>
-            </div>
-        </form>
-    </div>
-    <div class="column">
-        <table class="table is-fullwidth table is-striped">
-            <thead>
-                <tr>
-                    <th><abbr title="ID">ID</abbr></th>
-                    <th><abbr title="Name">Name</abbr></th>
-                    <th><abbr title="Cost">Cost</abbr></th>
-                    <th><abbr title="Buttons"></abbr></th>
-                </tr>
-                <tr *ngFor="let food of foods">
-                    <td>{{food.foodId}}</td>
-                    <td>{{food.name}}</td>
-                    <td>{{food.cost}}</td>
-                    <td>
-                        <a class="delete" (click)="deleteFood(food.foodId)"></a>
-                    </td>
-
-                </tr>
-            </thead>
-
-        </table>
-    </div>
-</div>
+<p> I am here</p>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Cost</th>
+        <th></th>
+    </thead>
+</table>

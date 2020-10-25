@@ -1,0 +1,54 @@
+<button class="button" (click)="openFoodModal()">Add Food</button>
+<div id="foodModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Modal title</p>
+            <button class="delete" aria-label="close" (click)="closeFoodModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            <form (ngSubmit)="addFood()">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-info">
+                        <div class="field">
+                            <div class="control">
+                                <input class="input is-primary" type="text" placeholder="Name" name="name" [(ngModel)]="foodName">
+                            </div>
+
+                            <div class="control">
+                                <input class="input is-primary" type="number" placeholder="Cost in INR" name="cost" [(ngModel)]="foodCost">
+                            </div>
+
+                            <div class="control">
+                                <input class="input is-primary" type="text" placeholder="ID" name="id" [(ngModel)]="foodId">
+                            </div>
+                            <div class="control">
+                                <input class="input is-primary" type="text" placeholder="restid" name="restid" [(ngModel)]="restId" disabled>
+                            </div>
+                        </div>
+                        <button type="submit" class="button">Add</button>
+                    </article>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+<table class="table is-fullwidth table is-striped">
+    <thead>
+        <tr>
+            <th><abbr title="ID">ID</abbr></th>
+            <th><abbr title="Name">Name</abbr></th>
+            <th><abbr title="Cost">Cost</abbr></th>
+            <th><abbr title="Buttons"></abbr></th>
+        </tr>
+        <tr *ngFor="let food of foods">
+            <td>{{food.foodId}}</td>
+            <td>{{food.name}}</td>
+            <td>{{food.cost}}</td>
+            <td>
+                <a class="delete" (click)="deleteFood(food.foodId)"></a>
+            </td>
+
+        </tr>
+    </thead>
+</table>
