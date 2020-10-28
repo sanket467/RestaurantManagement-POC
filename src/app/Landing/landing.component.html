@@ -1,9 +1,19 @@
-<p> In Landing </p>
-<p>{{restId}}</p>
-<p>{{restName}}</p>
-<p>What do you want to do today?</p>
-<div class="buttons">
-    <button class="button is-primary is-light" (click)="loadTable()">Add Table</button>
-    <button class="button is-primary is-light" (click)="loadMenu()">Set Menu</button>
-    <button class="button is-primary is-light">All Transactions</button>
+<div class="top-bar">
+    <button type="button" class="button start-btn" (click)='start()'> Start The Day !!!</button>
+</div>
+<div class="land">
+    <h1 style="font-size: 40px;">Welcome, {{restName}} </h1>
+
+    <p style="margin-top: 10px ;">What do you want to do today?</p>
+    <div class="buttons" style="margin-top: 30px ;">
+        <button class="button  tile" (click)="loadTable()">Manage Table</button>
+        <button class="button  tile" (click)="loadMenu()">Manage Menu</button>
+        <button class="button  tile">Manage Transactions</button>
+    </div>
+    <div *ngIf="showTable">
+        <table-cust></table-cust>
+    </div>
+    <div *ngIf="showMenu">
+        <menu-component></menu-component>
+    </div>
 </div>

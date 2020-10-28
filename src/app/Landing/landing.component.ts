@@ -26,6 +26,8 @@ export class LandingComponent implements OnInit, OnDestroy{
   restInfo: Subscription;
   dashData: any;
   restName = '';
+  showTable = false;
+  showMenu = false;
 
 
 
@@ -58,11 +60,20 @@ export class LandingComponent implements OnInit, OnDestroy{
     loadTable(){
       console.log(this.restObj);
       this.restService.goToTable(this.restObj);
+      this.showTable = true;
+      this.showMenu = false;
+
     }
 
     loadMenu(){
       console.log(this.restObj);
       this.restService.goToMenu(this.restObj);
+      this.showTable = false;
+      this.showMenu = true;
+    }
+
+    start(){
+      this.restService.goToBusiness(this.restObj);
     }
 
   ngOnDestroy(){

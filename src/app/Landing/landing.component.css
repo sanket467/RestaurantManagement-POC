@@ -1,0 +1,32 @@
+.land {
+    margin: 20vh;
+}
+
+p,
+h1 {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.tile {
+    height: 20vh;
+    text-align: center;
+    line-height: 15vh;
+    font-size: 20px;
+    background-color: #f87060;
+    color: white;
+}
+
+.start-btn {
+    float: right;
+    float: top;
+    background-color: #285CA4;
+    color: white;
+    border: 10px;
+    border-color: black;
+    padding: 30px;
+    width: 200px;
+}
+
+.top-bar {
+    padding: 20px;
+}

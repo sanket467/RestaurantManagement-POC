@@ -5,14 +5,14 @@ import { LandingComponent } from './Landing/landing.component';
 import { TableComponent } from './Table/table.component';
 import { FoodComponent } from './Food/food.component';
 import { MenuComponent } from './Menu/menu.component';
+import { BusinessComponent } from './Business/business.component';
 
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'restaurant', component: LandingComponent},
-  {path: 'table', component: TableComponent},
-  {path: 'food', component: FoodComponent},
-  {path: 'menu', component: MenuComponent}
+  {path: 'business', component: BusinessComponent}
+
 ];
 
 @NgModule({

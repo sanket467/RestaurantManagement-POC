@@ -37,13 +37,26 @@ export class RestService {
 
   goToTable(obj: any){
      this.restObjBuf = obj;
-     this.router.navigate(['/table']);
+     //this.router.navigate(['/table']);
   }
 
   goToMenu(obj: any){
     console.log("here");
     this.restObjBuf = obj;
-    this.router.navigate(['/menu']);
+    //this.router.navigate(['/menu']);
+  }
+
+
+  goToBusiness(obj: any){
+    this.restObjBuf = obj;
+    let busData = new FormData();
+    console.log("!!!" + this.restObjBuf.table);
+    console.log("!!!" + this.restObjBuf.restId);
+    busData.append('quant', this.restObjBuf.table);
+    busData.append('restId', this.restObjBuf.restId);
+    this.http.post('http://localhost:3000/api/table/addTable', busData)
+    .subscribe(result => {console.log(result)});
+    this.router.navigate(['/business']);
   }
 
   getMenuInfo(){

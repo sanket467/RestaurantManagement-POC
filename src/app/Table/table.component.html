@@ -1,11 +1,13 @@
-<p>We have {{ tables }} tables in the Restaurant</p>
+<div class="table-cont">
+    <p>We have {{ stables }} tables in the Restaurant</p>
 
-<div class="field">
-    <div class="control">
-        <input class="input is-primary" type="text" placeholder="Primary input" [(ngModel)]="tables" />
-    </div>
-    <button class="button is-primary is-light" (click)="tableModify()">
+    <div class="field">
+        <div class="control">
+            <input class="input is-primary" type="text" placeholder="Primary input" [(ngModel)]="tables" />
+        </div>
+        <button class="button is-primary is-light" (click)="tableModify()">
     Modify
   </button>
-    <div></div>
+        <div></div>
+    </div>
 </div>
